@@ -6,13 +6,31 @@ const app = express();
 app.use(express.json());
 
 app.get('/', async (req, res) => {
-    // conexao.query('select * from agenda where id = $1', [5]);
-    //const agenda = await knex('agenda').debug();
-    //const agenda = await knex.raw('select * from agenda');
-    //const agenda = await knex('agenda').where('id', 5).debug();
-    //const agenda = await knex('agenda').where('id', '!=', 5).debug();
-    const agenda = await knex('agenda').where({ id: 28, nome: 'Bree Dalton' }).debug();
-    return res.json(agenda);
+    //1 const quantidadeMedicamentos = await knex('farmacia').count();
+    //2 const usuarioMaisNovo = await knex('usuarios').min('idade');
+    
+    //3 const somaCategoria = await knex('farmacia')
+    // .select('categoria')
+    // .sum('estoque')
+    // .whereNotNull('categoria')
+    // .groupBy('categoria');
+
+    //4 const categoriaNula = await knex('farmacia').whereNull('categoria').count();
+
+    //5 const quantidadeCategoria = await knex('farmacia')
+    // .select('categoria')
+    // .count()
+    // .whereNotNull('categoria')
+    // .groupBy('categoria');
+
+    //6 const quantidadeUsurios = await knex('usuarios')
+    // .select('idade')
+    // .count()
+    // .where('idade', '>=', 18)
+    // .groupBy('idade')
+
+
+    return res.json(quantidadeUsurios);
 });
 
 app.listen(3000);
